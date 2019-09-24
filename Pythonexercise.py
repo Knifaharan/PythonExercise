@@ -1,5 +1,5 @@
-def sum_double(a, b):
-  if a is b:
-    return 2 * (a + b)
-  else:
-    return a+b
+def diff21(n):
+    if n <= 21:
+        return 21-n
+    else:
+        return (n - 21) * 2
