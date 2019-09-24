@@ -1,2 +1,2 @@
-def makes10(a, b):
-    return (a==10 or b==10 or a+b == 10)
+def near_hundred(n):
+    return ((abs(100-n) <=10) or (abs(200-n)<=10))
