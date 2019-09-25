@@ -1,34 +1,49 @@
-def first_last6(nums):
-    if nums[0] == 6 or nums[len(nums)-1] == 6:
-        print("True")
+def cigar_party(cigars, is_weekend):
+  if is_weekend:
+    return cigars >= 40
+  return 40 <= cigars <= 60
+def cigar_party(cigars, is_weekend):
+    if is_weekend:
+        return (cigars >= 40)
     else:
-        print("False")
-def same_first_last(nums):
-    return len(nums) > 0 and nums[0] == nums[-1]
-import math
-def make_pi():
-    return [3,1,4]
-def common_end(arr1, arr2):
-    if arr1[0] == arr2[0] or arr1[len(arr1)-1] == arr2[len(arr2)-1]:
-        print("true")
-    else:
-        print("false")
-def sum3(arr):
-    sum=0
-    for num in arr:
-        sum+=num
-        print(sum)
-def rotate_left3(nums):
-    return [nums[1], nums[2], num[0]]
-def reverse3(nums):
-    return [nums[2],nums[1],nums[0]]
-def max_end3(nums):
-    return [nums[0]]*3 if nums[0] >= nums[-1] else [nums[-1]]*3
-def sum2(nums):
-    return sum(nums[:2])
-def middle_way(a,b):
-    return [ a[1], b[1]]
-def make_ends(nums):
-    return [ nums[0], nums[-1]]
-def has23(nums):
-    return 2 in nums or 3 in nums
+        return (cigars >= 40 and cigars <= 60)
+def date_fashion(you, date):
+    if you <= 2 or date <= 2:
+        return 0
+        if you >= 8 or date >= 8:
+            return 2
+            return 1
+def squirrel_play(temp, is_summer):
+    if is_summer:
+        return 60 <= temp <= 100
+        return 60 <= temp <=90
+def caught_speeding(speed, is_birthday):
+    if is_birthday:
+        speed -= 5
+    if speed <= 60:
+      return 0
+    if 60 < speed <= 80:
+        return 1
+        return 2
+def sorta_sum(a, b):
+  if 10 <= a + b < 20:
+    return 20
+    return a + b
+def alarm_clock(day, vacation):
+  if not vacation:
+    if 1 <= day <= 5:
+      return '7:00'
+      return '10:00'
+  if 1 <= day <= 5:
+    return '10:00'
+    return 'off'
+def love6(a, b):
+  return a == 6 or b == 6 or (a + b) == 6 or abs(a - b) == 6
+def love6(a, b):
+  return 6 in [a, b, a + b, abs(a - b)]
+def in1to10(n, outside_mode):
+  if not outside_mode:
+    return n in range(1, 11)
+    return n <= 1 or n >= 10
+def near_ten(num):
+   return num % 10 in [0,1,2,8,9,10]
