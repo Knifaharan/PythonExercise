@@ -1,2 +1,2 @@
-def hello_name(name):
-    return "hello" + "Bob"
+def make_abba(a,b):
+    return a+b+a+b
