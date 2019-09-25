@@ -1,49 +1,46 @@
-def cigar_party(cigars, is_weekend):
-  if is_weekend:
-    return cigars >= 40
-  return 40 <= cigars <= 60
-def cigar_party(cigars, is_weekend):
-    if is_weekend:
-        return (cigars >= 40)
-    else:
-        return (cigars >= 40 and cigars <= 60)
-def date_fashion(you, date):
-    if you <= 2 or date <= 2:
-        return 0
-        if you >= 8 or date >= 8:
-            return 2
-            return 1
-def squirrel_play(temp, is_summer):
-    if is_summer:
-        return 60 <= temp <= 100
-        return 60 <= temp <=90
-def caught_speeding(speed, is_birthday):
-    if is_birthday:
-        speed -= 5
-    if speed <= 60:
-      return 0
-    if 60 < speed <= 80:
-        return 1
-        return 2
-def sorta_sum(a, b):
-  if 10 <= a + b < 20:
-    return 20
+def make_bricks(small, big, goal):
+  return goal%5 >= 0 and goal%5 - small <= 0 and small + 5*big >= goal
+def lone_sum(a, b, c):
+  if a == b == c:
+    return 0
+  if b == c:
+    return a
+  if a == c:
+    return b
+  if a == b:
+    return c
+  return a + b + c
+def lucky_sum(a, b, c):
+  if a == 13:
+    return 0
+  if b == 13:
+    return a
+  if c == 13:
     return a + b
-def alarm_clock(day, vacation):
-  if not vacation:
-    if 1 <= day <= 5:
-      return '7:00'
-      return '10:00'
-  if 1 <= day <= 5:
-    return '10:00'
-    return 'off'
-def love6(a, b):
-  return a == 6 or b == 6 or (a + b) == 6 or abs(a - b) == 6
-def love6(a, b):
-  return 6 in [a, b, a + b, abs(a - b)]
-def in1to10(n, outside_mode):
-  if not outside_mode:
-    return n in range(1, 11)
-    return n <= 1 or n >= 10
-def near_ten(num):
-   return num % 10 in [0,1,2,8,9,10]
+  return a + b + c
+def no_teen_sum(a, b, c):
+  return fix_teen(a) + fix_teen(b) + fix_teen(c)
+def fix_teen(n):
+  #if 13 <= n <= 14 or 17 <= n <= 19:
+  if n in [13, 14, 17, 18, 19]:
+    return 0
+  return n
+def round_sum(a, b, c):
+  return round10(a) + round10(b) + round10(c)
+def round10(n):
+  if n % 10 >= 5:
+    return n + 10 - (n % 10)
+  return n - (n % 10)
+def close_far(a, b, c):
+  cond1 = abs(a-b) <= 1 and abs(b-c) >=2 and abs(a-c) >= 2
+  cond2 = abs(a-c) <= 1 and abs(a-b) >=2 and abs(c-b) >= 2
+  return cond1 or cond2
+def make_chocolate(small, big, goal):
+  maxBig = goal / 5
+  if big >= maxBig:
+    if small >= (goal - maxBig * 5):
+      return goal - maxBig * 5
+  if big < maxBig:
+    if small >= (goal - big * 5):
+      return goal - big * 5
+  return -1
