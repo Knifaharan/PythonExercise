@@ -1,2 +1,4 @@
-def extra_end(str):
-    return str[-2:] * 3
+def First_two(str):
+    if len(str) <=2:
+        return str
+        return str[:2]
